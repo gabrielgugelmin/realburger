@@ -1,0 +1,42 @@
+@import 'mixins';
+@import 'colors';
+@import 'fonts';
+@import 'elements';
+
+img{
+   max-width: 100%;
+}
+
+body{
+   background-color: $cod-gray;
+}
+
+html, body {
+  height: 100%;
+  margin: 0; 
+  padding: 0;
+}
+
+.PageWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1280px;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.PageContent{
+   flex: 1;
+}
+
+.Footer{
+
+}
+
+.Social{
+   svg{
+      height: 24px;
+      width: 24px;
+   }
+}

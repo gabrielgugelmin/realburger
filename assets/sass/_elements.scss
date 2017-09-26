@@ -1,0 +1,6 @@
+@for $index from 1 through 6 {
+  h#{$index}{
+     color: $sugar-cane;
+    font-family: $source;
+  }
+}
