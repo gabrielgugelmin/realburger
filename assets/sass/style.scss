@@ -2,6 +2,10 @@
 @import 'colors';
 @import 'fonts';
 @import 'elements';
+@import 'header';
+
+
+// GENERAL
 
 img{
    max-width: 100%;
@@ -20,8 +24,6 @@ html, body {
 .PageWrapper {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  max-width: 1280px;
   min-height: 100%;
   overflow: hidden;
 }
@@ -30,9 +32,32 @@ html, body {
    flex: 1;
 }
 
-.Footer{
 
+// CONTENT
+
+.Banner{
+  height: 100vh;
+  position: relative;
+
+  &--photo{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .Social{
    svg{
