@@ -6,6 +6,7 @@
     line-height: 1.2;
     position: relative;
     padding: 5px 0;
+    width: auto;
 
     &::before,
     &::after{
@@ -53,9 +54,9 @@
     background-color: transparent;
     border: 0;
     cursor: pointer;
-    height: 30px;
+    height: 50px;
     position: absolute;
-    width: 40px;
+    width: 50px;
     z-index: 1;
 
     &::after,
@@ -63,18 +64,18 @@
       background-color: white;
       content: "";
       display: inline-block;
-      height: 2px;
+      height: 3px;
       position: absolute;
-      width: 20px;
+      width: 30px;
       border-radius: 3px;
     }
 
     &::after{
-      top: 19px;
+      top: 34px;
     }
 
     &::before{
-      top: 6px;
+      top: 12px;
     }
 
     &--prev{
@@ -86,11 +87,11 @@
       }
 
       &::after{
-        @include transform(rotate(45deg));
+        @include transform(rotate(50deg));
       }
 
       &::before{
-        @include transform(rotate(-45deg));
+        @include transform(rotate(-50deg));
       }
     }
 
@@ -103,11 +104,11 @@
       }
 
       &::after{
-        @include transform(rotate(-45deg));
+        @include transform(rotate(-50deg));
       }
 
       &::before{
-        @include transform(rotate(45deg));
+        @include transform(rotate(50deg));
       }
     }
 
@@ -118,19 +119,68 @@
 }
 
 .Button{
-  border: 3px solid $sugar-cane;
+  background: transparent;
+  border: 0;
   color: $sugar-cane;
   display: inline-block;
   font-family: $mont;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
-  line-height: 1.2;
-  padding: 10px 25px;
+  line-height: 1.2; 
   text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
+
+  span{
+    border: 3px solid $sugar-cane;
+    display: block;
+    height: 100%;
+    padding: 12px 25px;
+    position: relative;
+    width: 100%;
+  }
+
+  &--big{
+    @extend .Button;
+
+    margin: 80px auto;
+    position: relative;
+    z-index: 1;
+
+    span{
+      border: 8px solid $sugar-cane;
+      padding: 38px 75px;
+    }
+
+    &::before{
+      @include transform(rotate(26.5deg) translateY(-50%));
+      background-color: $tall-poppy;
+      content: "";
+      display: block;
+      height: 1px;
+      left: -40px;
+      position: absolute;
+      top: 50%;
+      width: calc(100% + 80px);
+      z-index: 0;
+    }
+  }
+
+  @include MQ(L){
+    font-size: 17px;
+  }
 }
 
 
 .Content{
   padding: 0 15px;
+  margin: 0 auto;
+
+  @include MQ(M){
+    max-width: 970px;
+  }
+
+  @include MQ(L){
+    max-width: 1280px;
+  }
 }

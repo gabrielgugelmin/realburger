@@ -1,0 +1,30 @@
+.Footer{
+  background-color: #161616;
+  padding: 30px 15px;
+  text-align: center;
+
+  a{
+    color: $sugar-cane;
+    font-family: $mont;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  &__crowd{
+    display: inline-block;
+    width: 60px;
+
+    img{
+      max-width: 100%;
+    }
+  }
+
+  .Social{
+    margin: 30px 0;
+
+    li{
+      display: inline-block;
+      margin: 0 8px;
+    }
+  }
+}

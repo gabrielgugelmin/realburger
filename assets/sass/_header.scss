@@ -9,6 +9,11 @@
     @include center(x);
     top: 150px;
     width: 140px;
+
+    @include MQ(L){
+      top: 12%;
+      width: 210px;
+    }
   }
 
   &__call{

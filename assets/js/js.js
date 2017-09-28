@@ -43,31 +43,30 @@ $(function(){
 
   // slider
   $('.js-gallerySlider').slick({
-    autoplay: true,
-    arrows: false,
-    dots: false,
-    speed: 800,
+    arrows: true,
     asNavFor: '.js-gallerySliderNav',
-    infinite: false,
-    mobileFirst: true
+    autoplay: true,
+    dots: false,
+    mobileFirst: true,
+    speed: 800,
+    nextArrow: '<button type="button" class="Arrow__button Arrow__button--next"></button>',
+    prevArrow: '<button type="button" class="Arrow__button Arrow__button--prev"></button>',
   });
 
   $('.js-gallerySliderNav').slick({
-    arrows: true,
+    arrows: false,
     asNavFor: '.js-gallerySlider',
-    centerMode: true,
+    //centerMode: true,
     focusOnSelect: true,
     infinite: true,
     mobileFirst: true,
-    nextArrow: '<button type="button" class="Arrow__button Arrow__button--next"></button>',
-    prevArrow: '<button type="button" class="Arrow__button Arrow__button--prev"></button>',
     slidesToScroll: 2,
     slidesToShow: 2,
     responsive: [
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true
         }
@@ -75,7 +74,7 @@ $(function(){
       {
         breakpoint: 991,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
           centerMode: true,

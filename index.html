@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 	<!-- FONTS -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Open+Sans" rel="stylesheet">
 
 	<link rel="stylesheet" href="assets/css/style.min.css">
 
@@ -48,7 +48,7 @@
 			</a>
 
 			<a class="Header__call Button" href="#/">
-				PEÇA AGORA
+				<span>PEÇA AGORA</span>
 			</a>
 
 			<a href="#galeria"></a>
@@ -64,199 +64,212 @@
 						<h2>GALERIA</h2>
 					</div> <!-- Title -->
 
-					<div class="GallerySlider js-gallerySlider">
-						<div class="GallerySlider__item" style="background-image: url(assets/img/p1.jpg);"></div>
-						<div class="GallerySlider__item" style="background-image: url(assets/img/p2.jpg);"></div>
-						<div class="GallerySlider__item" style="background-image: url(assets/img/p1.jpg);"></div>
-						<div class="GallerySlider__item" style="background-image: url(assets/img/p2.jpg);"></div>
-					</div>
-
-					<div class="GalleryNav js-gallerySliderNav">
-						<div class="GalleryNav__item" style="background-image: url(assets/img/p1.jpg);"></div>
-						<div class="GalleryNav__item" style="background-image: url(assets/img/p2.jpg);"></div>
-						<div class="GalleryNav__item" style="background-image: url(assets/img/p1.jpg);"></div>
-						<div class="GalleryNav__item" style="background-image: url(assets/img/p2.jpg);"></div>
+					<div class="Gallery__wrapper">
+						<div class="GallerySlider js-gallerySlider">
+							<div class="GallerySlider__item" style="background-image: url(assets/img/p1.jpg);"></div>
+							<div class="GallerySlider__item" style="background-image: url(assets/img/p2.jpg);"></div>
+							<div class="GallerySlider__item" style="background-image: url(assets/img/p1.jpg);"></div>
+							<div class="GallerySlider__item" style="background-image: url(assets/img/p2.jpg);"></div>
+						</div>
+		
+						<div class="GalleryNav js-gallerySliderNav">
+							<div class="GalleryNav__item" style="background-image: url(assets/img/p1.jpg);"></div>
+							<div class="GalleryNav__item" style="background-image: url(assets/img/p2.jpg);"></div>
+							<div class="GalleryNav__item" style="background-image: url(assets/img/p1.jpg);"></div>
+							<div class="GalleryNav__item" style="background-image: url(assets/img/p2.jpg);"></div>
+						</div>
 					</div>
 				</div> <!-- Content -->
 			</section> <!-- Gallery -->
 
-			<a href="#/" class="Button--big">
-				<span>ver<br>cardápio</span>
-			</a>
+			<section class="Content Cardapio">
+				<a href="#/" class="Button--big">
+					<span>ver<br>cardápio</span>
+				</a>
+			</section>
 
 			<section class="Stores">
-				<article class="Store--left">
-					<img src="assets/img/loja/loja1.jpg" alt="Alphaville">
+				<div class="Content">
+					<div class="Title">
+						<h2>NOSSAS LOJAS</h2>
+					</div> <!-- Title -->
+				
+					<article class="Store--left">
+						<img src="assets/img/loja/loja1.jpg" alt="Alphaville">
 
-					<div class="Store__content">
-						<h3>ALPHAVILLE</h3>
+						<div class="Store__content">
+							<h3>ALPHAVILLE</h3>
 
-						<dl>
-							<dt>ENDEREÇO</dt>
-							<dd>Av. Sagitário, 138 - Alphaville Barueri<br>>hopping Alpha Square</dd>
+							<dl>
+								<dt>ENDEREÇO</dt>
+								<dd>Av. Sagitário, 138 - Alphaville Barueri<br>Shopping Alpha Square</dd>
 
-							<dt>TELEFONE</dt>
-							<dd>(11) 4193-8432</dd>
+								<dt>TELEFONE</dt>
+								<dd>(11) 4193-8432</dd>
 
-							<dt>HORÁRIO</dt>
-							<dd>
-								<dl>
-									<dt>segunda a quinta</dt>
-									<dd>11:30h às 15h — 18h às 22h</dd>
+								<dt>HORÁRIO</dt>
+								<dd>
+									<dl>
+										<dt>segunda a quinta</dt>
+										<dd>11:30h às 15h — 18h às 22h</dd>
 
-									<dt>sexta</dt>
-									<dd>11:30h às 15h — 18h às 23h</dd>
+										<dt>sexta</dt>
+										<dd>11:30h às 15h — 18h às 23h</dd>
 
-									<dt>sábado</dt>
-									<dd>12h às 23h</dd>
+										<dt>sábado</dt>
+										<dd>12h às 23h</dd>
 
-									<dt>domingo</dt>
-									<dd>13h às 22h</dd>
-								</dl>
-							</dd>
+										<dt>domingo</dt>
+										<dd>13h às 22h</dd>
+									</dl>
+								</dd>
 
-							<dt>ESTACIONAMENTO</dt>
-							<dd>R$ 10,00 = 2 horas. Lembrar de pedir o selo promocional.</dd>
-						</dl>
-					</div> <!-- Store__content -->
-				</article> <!-- Store -->
+								<dt>ESTACIONAMENTO</dt>
+								<dd>R$ 10,00 = 2 horas. Lembrar de pedir o selo promocional.</dd>
+							</dl>
+						</div> <!-- Store__content -->
+					</article> <!-- Store -->
 
-				<article class="Store--right">
-					<img src="assets/img/loja/loja2.jpg" alt="Alphaville">
+					<article class="Store--right">
+						<img src="assets/img/loja/loja2.jpg" alt="Alphaville">
 
-					<div class="Store__content">
-						<h3>SHOPPING PÁTIO PAULISTA</h3>
+						<div class="Store__content">
+							<h3>SHOPPING PÁTIO PAULISTA</h3>
 
-						<dl>
-							<dt>ENDEREÇO</dt>
-							<dd>Rua Treze de Maio, 1947<br>Piso Paraíso - praça de alimentação</dd>
+							<dl>
+								<dt>ENDEREÇO</dt>
+								<dd>Rua Treze de Maio, 1947<br>Piso Paraíso - praça de alimentação</dd>
 
-							<dt>TELEFONE</dt>
-							<dd>(11) 3171-1949</dd>
+								<dt>TELEFONE</dt>
+								<dd>(11) 3171-1949</dd>
 
-							<dt>HORÁRIO</dt>
-							<dd>
-								<dl>
-									<dt>segunda a domingo</dt>
-									<dd>10h às 22h</dd>
-								</dl>
-							</dd>
+								<dt>HORÁRIO</dt>
+								<dd>
+									<dl>
+										<dt>segunda a domingo</dt>
+										<dd>10h às 22h</dd>
+									</dl>
+								</dd>
 
-							<dt>ESTACIONAMENTO</dt>
-							<dd>Carro R$ 14 = 2 horas. Demais R$ 4.<br>
-									Moto R$ 7 = 2 horas. Demais R$ 4.<br>
-									Bicicleta é grátis.
-							</dd>
-						</dl>
-					</div> <!-- Store__content -->
-				</article> <!-- Store -->
+								<dt>ESTACIONAMENTO</dt>
+								<dd>Carro R$ 14 = 2 horas. Demais R$ 4.<br>
+										Moto R$ 7 = 2 horas. Demais R$ 4.<br>
+										Bicicleta é grátis.
+								</dd>
+							</dl>
+						</div> <!-- Store__content -->
+					</article> <!-- Store -->
 
-				<article class="Store--left">
-					<img src="assets/img/loja/loja1.jpg" alt="Alphaville">
+					<article class="Store--left">
+						<img src="assets/img/loja/loja1.jpg" alt="Alphaville">
 
-					<div class="Store__content">
-						<h3>ALPHAVILLE</h3>
+						<div class="Store__content">
+							<h3>ALPHAVILLE</h3>
 
-						<dl>
-							<dt>ENDEREÇO</dt>
-							<dd>Av. Sagitário, 138 - Alphaville Barueri<br>>hopping Alpha Square</dd>
+							<dl>
+								<dt>ENDEREÇO</dt>
+								<dd>Av. Sagitário, 138 - Alphaville Barueri<br>Shopping Alpha Square</dd>
 
-							<dt>TELEFONE</dt>
-							<dd>(11) 4193-8432</dd>
+								<dt>TELEFONE</dt>
+								<dd>(11) 4193-8432</dd>
 
-							<dt>HORÁRIO</dt>
-							<dd>
-								<dl>
-									<dt>segunda a quinta</dt>
-									<dd>11:30h às 15h — 18h às 22h</dd>
+								<dt>HORÁRIO</dt>
+								<dd>
+									<dl>
+										<dt>segunda a quinta</dt>
+										<dd>11:30h às 15h — 18h às 22h</dd>
 
-									<dt>sexta</dt>
-									<dd>11:30h às 15h — 18h às 23h</dd>
+										<dt>sexta</dt>
+										<dd>11:30h às 15h — 18h às 23h</dd>
 
-									<dt>sábado</dt>
-									<dd>12h às 23h</dd>
+										<dt>sábado</dt>
+										<dd>12h às 23h</dd>
 
-									<dt>domingo</dt>
-									<dd>13h às 22h</dd>
-								</dl>
-							</dd>
+										<dt>domingo</dt>
+										<dd>13h às 22h</dd>
+									</dl>
+								</dd>
 
-							<dt>ESTACIONAMENTO</dt>
-							<dd>R$ 10,00 = 2 horas. Lembrar de pedir o selo promocional.</dd>
-						</dl>
-					</div> <!-- Store__content -->
-				</article> <!-- Store -->
+								<dt>ESTACIONAMENTO</dt>
+								<dd>R$ 10,00 = 2 horas. Lembrar de pedir o selo promocional.</dd>
+							</dl>
+						</div> <!-- Store__content -->
+					</article> <!-- Store -->
 
-				<article class="Store--right">
-					<img src="assets/img/loja/loja2.jpg" alt="Alphaville">
+					<article class="Store--right">
+						<img src="assets/img/loja/loja2.jpg" alt="Alphaville">
 
-					<div class="Store__content">
-						<h3>SHOPPING PÁTIO PAULISTA</h3>
+						<div class="Store__content">
+							<h3>SHOPPING PÁTIO PAULISTA</h3>
 
-						<dl>
-							<dt>ENDEREÇO</dt>
-							<dd>Rua Treze de Maio, 1947<br>Piso Paraíso - praça de alimentação</dd>
+							<dl>
+								<dt>ENDEREÇO</dt>
+								<dd>Rua Treze de Maio, 1947<br>Piso Paraíso - praça de alimentação</dd>
 
-							<dt>TELEFONE</dt>
-							<dd>(11) 3171-1949</dd>
+								<dt>TELEFONE</dt>
+								<dd>(11) 3171-1949</dd>
 
-							<dt>HORÁRIO</dt>
-							<dd>
-								<dl>
-									<dt>segunda a domingo</dt>
-									<dd>10h às 22h</dd>
-								</dl>
-							</dd>
+								<dt>HORÁRIO</dt>
+								<dd>
+									<dl>
+										<dt>segunda a domingo</dt>
+										<dd>10h às 22h</dd>
+									</dl>
+								</dd>
 
-							<dt>ESTACIONAMENTO</dt>
-							<dd>Carro R$ 14 = 2 horas. Demais R$ 4.<br>
-									Moto R$ 7 = 2 horas. Demais R$ 4.<br>
-									Bicicleta é grátis.
-							</dd>
-						</dl>
-					</div> <!-- Store__content -->
-				</article> <!-- Store -->
+								<dt>ESTACIONAMENTO</dt>
+								<dd>Carro R$ 14 = 2 horas. Demais R$ 4.<br>
+										Moto R$ 7 = 2 horas. Demais R$ 4.<br>
+										Bicicleta é grátis.
+								</dd>
+							</dl>
+						</div> <!-- Store__content -->
+					</article> <!-- Store -->
 
-				<article class="Store--left">
-					<img src="assets/img/loja/loja1.jpg" alt="Alphaville">
+					<article class="Store--left">
+						<img src="assets/img/loja/loja1.jpg" alt="Alphaville">
 
-					<div class="Store__content">
-						<h3>ALPHAVILLE</h3>
+						<div class="Store__content">
+							<h3>ALPHAVILLE</h3>
 
-						<dl>
-							<dt>ENDEREÇO</dt>
-							<dd>Av. Sagitário, 138 - Alphaville Barueri<br>>hopping Alpha Square</dd>
+							<dl>
+								<dt>ENDEREÇO</dt>
+								<dd>Av. Sagitário, 138 - Alphaville Barueri<br>Shopping Alpha Square</dd>
 
-							<dt>TELEFONE</dt>
-							<dd>(11) 4193-8432</dd>
+								<dt>TELEFONE</dt>
+								<dd>(11) 4193-8432</dd>
 
-							<dt>HORÁRIO</dt>
-							<dd>
-								<dl>
-									<dt>segunda a quinta</dt>
-									<dd>11:30h às 15h — 18h às 22h</dd>
+								<dt>HORÁRIO</dt>
+								<dd>
+									<dl>
+										<dt>segunda a quinta</dt>
+										<dd>11:30h às 15h — 18h às 22h</dd>
 
-									<dt>sexta</dt>
-									<dd>11:30h às 15h — 18h às 23h</dd>
+										<dt>sexta</dt>
+										<dd>11:30h às 15h — 18h às 23h</dd>
 
-									<dt>sábado</dt>
-									<dd>12h às 23h</dd>
+										<dt>sábado</dt>
+										<dd>12h às 23h</dd>
 
-									<dt>domingo</dt>
-									<dd>13h às 22h</dd>
-								</dl>
-							</dd>
+										<dt>domingo</dt>
+										<dd>13h às 22h</dd>
+									</dl>
+								</dd>
 
-							<dt>ESTACIONAMENTO</dt>
-							<dd>R$ 10,00 = 2 horas. Lembrar de pedir o selo promocional.</dd>
-						</dl>
-					</div> <!-- Store__content -->
-				</article> <!-- Store -->
+								<dt>ESTACIONAMENTO</dt>
+								<dd>R$ 10,00 = 2 horas. Lembrar de pedir o selo promocional.</dd>
+							</dl>
+						</div> <!-- Store__content -->
+					</article> <!-- Store -->
+
+				</div> <!-- Content -->
 			</section> <!-- Stores -->
 
-			<button class="Button--big js-modalContato">
-				<span>fale<br>conosco</span>
-			</button>
+			<section class="Content Cardapio">
+				<button class="Button--big js-modalContato">
+					<span>fale<br>conosco</span>
+				</button>
+			</section>
 		</main> <!-- PageContent -->
 
 		<footer class="Footer">
@@ -275,7 +288,9 @@
 				</li>
 			</ul> <!-- Social -->
 
-			<a href="https://crowd.br.com/" target="_blank">crowd</a>
+			<a href="https://crowd.br.com/" target="_blank" class="Footer__crowd">
+				<img src="assets/img/logo-crowd.png" alt="crowd">
+			</a>
 		</footer>
 	</div> <!-- PageWrapper -->
 
