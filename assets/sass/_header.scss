@@ -1,4 +1,19 @@
 .Header{
   position: absolute;
   width: 100%;
+  z-index: 2;
+  height: 100%;
+
+  &__logo{
+    position: absolute;
+    @include center(x);
+    top: 150px;
+    width: 140px;
+  }
+
+  &__call{
+    @include center(x);
+    bottom: 140px;
+    position: absolute;
+  }
 }

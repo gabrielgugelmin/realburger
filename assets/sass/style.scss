@@ -3,6 +3,7 @@
 @import 'fonts';
 @import 'elements';
 @import 'header';
+@import 'menu';
 
 
 // GENERAL
@@ -39,13 +40,99 @@ html, body {
   height: 100vh;
   position: relative;
 
+  &::before{
+    background: rgba($cod-gray, .65);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1; 
+  }
+
   &--photo{
+    @extend .Banner;
+    
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
 }
 
+.Gallery{
+  .Content{
+    padding: 0;
+
+    @include MQ(M){
+      padding: 0 15px;
+    }
+  }
+
+  .Title{
+    padding: 0 15px;
+  }
+}
+
+.GallerySlider{
+  position: relative;
+  height: 300px;
+  margin: 0;
+
+  .slick-list,
+  .slick-track{
+    height: 100%;
+  }
+
+  &__item{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
+
+  @include MQ(M){
+    float: left;      
+    width: calc(100% - 126px);
+  }
+}
+
+.GalleryNav{
+  height: 100px;
+
+  .slick-list,
+  .slick-track{
+    height: 100%;
+  }
+
+  &__item{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+
+    &::after{
+      @include transition(opacity .5s ease);
+      background: rgba($cod-gray, .65);
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1; 
+    }
+
+    &.slick-current{
+      &::after{
+        opacity: 0;
+      }
+    }
+  }
+}
 
 
 
@@ -65,3 +152,4 @@ html, body {
       width: 24px;
    }
 }
+

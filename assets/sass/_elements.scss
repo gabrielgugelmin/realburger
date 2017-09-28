@@ -1,6 +1,136 @@
 @for $index from 1 through 6 {
   h#{$index}{
-     color: $sugar-cane;
-    font-family: $source;
+    color: $sugar-cane;
+    display: inline-block;
+    font-family: $mont;
+    line-height: 1.2;
+    position: relative;
+    padding: 5px 0;
+
+    &::before,
+    &::after{
+      content: "";
+      background: $sugar-cane;
+      height: 2px;
+      position: absolute;
+      width: 30%;
+    }
+
+    &::before{
+      top: 0;
+      left: 0;
+    }
+
+    &::after{
+      bottom: 0;
+      right: 0;
+    }
   }
+}
+
+.Overlay{
+  @include transition(all .3s ease);
+
+  background: rgba(0,0,0,.75);
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+
+  &.is-open{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+}
+
+.Arrow{
+  &__button{
+    @include center(y);
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    width: 40px;
+    z-index: 1;
+
+    &::after,
+    &::before{
+      background-color: white;
+      content: "";
+      display: inline-block;
+      height: 2px;
+      position: absolute;
+      width: 20px;
+      border-radius: 3px;
+    }
+
+    &::after{
+      top: 19px;
+    }
+
+    &::before{
+      top: 6px;
+    }
+
+    &--prev{
+      left: 5px;
+
+      &::after,
+      &::before{
+        left: 0;
+      }
+
+      &::after{
+        @include transform(rotate(45deg));
+      }
+
+      &::before{
+        @include transform(rotate(-45deg));
+      }
+    }
+
+    &--next{
+      right: 5px;
+
+      &::after,
+      &::before{
+        right: 0;
+      }
+
+      &::after{
+        @include transform(rotate(-45deg));
+      }
+
+      &::before{
+        @include transform(rotate(45deg));
+      }
+    }
+
+    &:focus{
+      outline: 0;
+    }
+  }
+}
+
+.Button{
+  border: 3px solid $sugar-cane;
+  color: $sugar-cane;
+  display: inline-block;
+  font-family: $mont;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+.Content{
+  padding: 0 15px;
 }
