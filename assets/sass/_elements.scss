@@ -5,27 +5,43 @@
     font-family: $mont;
     line-height: 1.2;
     position: relative;
-    padding: 5px 0;
+    margin: 0;
     width: auto;
 
-    &::before,
-    &::after{
-      content: "";
-      background: $sugar-cane;
-      height: 2px;
-      position: absolute;
-      width: 30%;
-    }
+    &.line{
+      span{
+        padding: 8px 0;
+        position: relative;
+        
+        &::before,
+        &::after{
+          content: "";
+          background: $sugar-cane;
+          height: 2px;
+          position: absolute;
+          width: 30%;
+          min-width: 80px;
+        }
 
-    &::before{
-      top: 0;
-      left: 0;
-    }
+        &::before{
+          top: 0;
+          left: 0;
+        }
 
-    &::after{
-      bottom: 0;
-      right: 0;
+        &::after{
+          bottom: 0;
+          right: 0;
+        }
+      }
     }
+  }
+}
+
+h2{
+  margin-bottom: 30px;
+
+  @include MQ(M){
+    margin-bottom: 75px;
   }
 }
 
@@ -122,11 +138,13 @@
   background: transparent;
   border: 0;
   color: $sugar-cane;
+  cursor: pointer;
   display: inline-block;
   font-family: $mont;
   font-size: 12px;
   font-weight: 700;
   line-height: 1.2; 
+  padding: 0;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -168,6 +186,10 @@
 
   @include MQ(L){
     font-size: 17px;
+
+    span{
+      padding: 38px 92px;
+    }
   }
 }
 
@@ -181,6 +203,10 @@
   }
 
   @include MQ(L){
+    max-width: 1170px;
+  }
+
+  @include MQ(XL){
     max-width: 1280px;
   }
 }

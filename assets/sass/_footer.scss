@@ -12,10 +12,9 @@
 
   &__crowd{
     display: inline-block;
-    width: 60px;
 
     img{
-      max-width: 100%;
+      max-width: 60px;
     }
   }
 
@@ -25,6 +24,21 @@
     li{
       display: inline-block;
       margin: 0 8px;
+    }
+  }
+
+  @include MQ(M){
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    
+    .Social{
+      margin: 0;
+    }
+
+    > a,
+    ul{
+      flex: 1;
     }
   }
 }

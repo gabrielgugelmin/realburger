@@ -82,6 +82,10 @@ html, body {
     @include clearfix;
     position: relative;
   }
+
+  @include MQ(M){
+    padding: 100px 0 0;
+  }
 }
 
 .GallerySlider{
@@ -168,6 +172,10 @@ html, body {
 
 .Cardapio{
   text-align: center;
+
+  @include MQ(M){
+    padding: 100px 0;
+  }
 }
 
 .Store{
@@ -184,15 +192,19 @@ html, body {
 
   &__content{
     color: $sugar-cane;
-    padding: 15px;
+    padding: 0 15px;
+
+    dl{
+      margin: 0;
+    }
 
     dt{
       font-family: $mont;
       font-weight: 600;
       text-transform: uppercase;
       font-size: 20px;
-      margin-bottom: 15px;
-      margin-top: 30px;
+      margin-bottom: 10px;
+      margin-top: 20px;
     }
 
     dd{
@@ -219,10 +231,68 @@ html, body {
   &--left,
   &--right{
     @extend .Store;
+
+    @include MQ(M){
+      display: flex;
+
+      .Store__img{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        flex: 1.9;
+      }
+
+      .Store__content{
+        flex: 1;
+      }
+    }
+  }
+
+  &--left{
+    .Store__img{
+      order: 0;
+    }
+
+    .Store__content{
+      @include MQ(M){
+        padding: 0 0 0 40px;
+        text-align: left;
+      }
+    }
+  }
+
+  &--right{
+    .Store__img{
+      order: 1;
+    }
+
+    .Store__content{
+      @include MQ(M){
+        padding: 0 40px 0 0;
+        text-align: right;
+      }
+    }
   }
 }
 
+.Media{
+  &__content{
+    @include MQ(M){
+      display: flex;
+    }
+  }
 
+  &__column{
+    > img{
+      height: 24px;
+      width: 24px;
+    }
+
+    @include MQ(M){
+      flex: 1;
+    }
+  }
+}
 
 
 
@@ -238,9 +308,28 @@ html, body {
   margin: 0;
   padding: 0;
 
-   svg{
-      height: 24px;
-      width: 24px;
-   }
+  li,
+  a{
+    display: inline-block;
+    height: 24px;
+  }
+
+  svg{
+    height: 24px;
+    width: 24px;
+  }
+
+  @include MQ(M){
+    
+    li,
+    a{
+      height: 32px;
+    }
+
+    svg{
+      height: 32px;
+      width: 32px;
+    }
+  }
 }
 
