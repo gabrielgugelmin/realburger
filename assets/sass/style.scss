@@ -39,10 +39,11 @@ html, body {
 
 .Banner{
   height: 100vh;
+  margin-bottom: 60px;
   position: relative;
 
   &::before{
-    background: rgba($cod-gray, .65);
+    background: rgba($cod-gray, .55);
     content: "";
     display: block;
     height: 100%;
@@ -59,6 +60,10 @@ html, body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+  }
+
+  @include MQ(M){
+    margin-bottom: 0;
   }
 }
 
@@ -178,8 +183,15 @@ html, body {
   }
 }
 
-.Store{
+.Content{
   margin-bottom: 65px;
+
+  &--internal{
+    .Content--left,
+    .Content--right{
+      margin: 0;
+    }
+  }
 
   h3{
     font-size: 30px;
@@ -190,7 +202,7 @@ html, body {
     }
   }
 
-  &__content{
+  &__text{
     color: $sugar-cane;
     padding: 0 15px;
 
@@ -226,47 +238,62 @@ html, body {
         margin-bottom: 15px;
       }
     }
+
+    p{
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: .2px;
+      font-family: $roboto;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 300px;
+    margin-bottom: 30px;
   }
 
   &--left,
   &--right{
-    @extend .Store;
+    @extend .Content;
 
     @include MQ(M){
       display: flex;
 
-      .Store__img{
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
+      .Content__img{
         flex: 1.9;
+        height: auto;
+        margin: 0;
       }
 
-      .Store__content{
+      .Content__text{
         flex: 1;
       }
     }
   }
 
   &--left{
-    .Store__img{
+    .Content__img{
       order: 0;
     }
 
-    .Store__content{
+    .Content__text{
       @include MQ(M){
-        padding: 0 0 0 40px;
+        padding: 20px  40px;
         text-align: left;
       }
     }
   }
 
   &--right{
-    .Store__img{
+    .Content__img{
       order: 1;
     }
 
-    .Store__content{
+    .Content__text{
       @include MQ(M){
         padding: 0 40px 0 0;
         text-align: right;
@@ -301,8 +328,6 @@ html, body {
 
 
 
-
-
 .Social{
   list-style: none;
   margin: 0;
@@ -314,9 +339,21 @@ html, body {
     height: 24px;
   }
 
+  li{
+    &:hover{
+      path, ellipse{
+        fill: $pizazz;
+      }
+    }
+  }
+
   svg{
     height: 24px;
     width: 24px;
+
+    path, ellipse{
+      @include transition(fill .4s ease);
+    }
   }
 
   @include MQ(M){

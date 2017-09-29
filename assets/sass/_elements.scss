@@ -9,6 +9,8 @@
     width: auto;
 
     &.line{
+      padding: 10px 0;
+
       span{
         padding: 8px 0;
         position: relative;
@@ -38,10 +40,15 @@
 }
 
 h2{
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  font-size: 36px;
 
-  @include MQ(M){
-    margin-bottom: 75px;
+  @include MQ(L){
+    font-size: 46px;
+  }
+
+  @include MQ(XL){
+    font-size: 58px;
   }
 }
 
@@ -158,6 +165,10 @@ h2{
     width: 100%;
   }
 
+  @include MQ(L){
+    font-size: 16px;
+  }
+
   &--big{
     @extend .Button;
 
@@ -182,19 +193,18 @@ h2{
       width: calc(100% + 80px);
       z-index: 0;
     }
-  }
 
-  @include MQ(L){
-    font-size: 17px;
-
-    span{
-      padding: 38px 92px;
+    @include MQ(M){
+      span{
+        font-size: 15px;
+        padding: 38px 92px;
+      }
     }
   }
 }
 
 
-.Content{
+.Container{
   padding: 0 15px;
   margin: 0 auto;
 
@@ -207,6 +217,6 @@ h2{
   }
 
   @include MQ(XL){
-    max-width: 1280px;
+    max-width: 1400px;
   }
 }
