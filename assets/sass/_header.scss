@@ -1,8 +1,8 @@
 .Header{
+  height: 100%;
   position: absolute;
   width: 100%;
   z-index: 2;
-  height: 100%;
 
   &__logo{
     position: absolute;
@@ -21,4 +21,115 @@
     bottom: 140px;
     position: absolute;
   }
+
+  &__logo,
+  &__call{
+    @include transition(all .15s ease);
+  }
+
+  /*&.is-scrolling{
+    
+    @include MQ(L){
+
+      .Header__logo,
+      .Header__call{
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .Header__call{
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .Menu__logo{
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .Menu{
+        top: 0;
+        border: 0;
+        background-color: $cod-gray;
+        width: 100%;
+        max-width: 100%;
+        position: fixed;
+        left: 0;
+        height: 74px;
+
+        li{
+          a{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }*/
+
+
+  @include MQ(L){
+    //z-index: 2;
+  }
+}
+
+.Bar{
+  @include transition(all .3s linear);
+  background-color: transparent;
+  height: 74px;
+  opacity: 1;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+
+  .Menu{
+    border: 0;
+    top: 12px;
+  }
+
+  .Container{
+    height: 100%;
+    position: relative;
+  }
+
+  &__logo{
+    @include center(y);
+    left: 30px;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.is-scrolling{
+    background-color: $cod-gray;
+    opacity: 1;
+    visibility: visible;
+    z-index: 3;
+    box-shadow: 0 0 5px 2px rgba(black, .4);
+
+    .Bar__logo{
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .Menu{
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+    }
+
+    .MenuTrigger{
+      @include center(y);
+    }
+  }
+
+  &.subOpen{
+    height: 130px;
+  }
+
+  .Menu{
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+  }
+
 }

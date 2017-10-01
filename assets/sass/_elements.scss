@@ -52,6 +52,10 @@ h2{
   }
 }
 
+.OverflowHidden{
+   overflow: hidden;
+}
+
 .Overlay{
   @include transition(all .3s ease);
 
@@ -203,7 +207,6 @@ h2{
   }
 }
 
-
 .Container{
   padding: 0 15px;
   margin: 0 auto;
@@ -218,5 +221,67 @@ h2{
 
   @include MQ(XL){
     max-width: 1400px;
+  }
+}
+
+.Excerpt{
+  text-align: center;
+  max-width: 940px;
+  margin: 90px auto;
+
+  @include MQ(M){
+    margin: 180px auto;
+  }
+
+  p{
+    font-size: 14px;
+    color: #888888;
+    font-family: $roboto;
+    line-height: 1.8;
+
+    @include MQ(L){
+      font-size: 16px;
+    }
+
+    @include MQ(XL){
+      font-size: 20px;
+    }
+  }
+
+  h6{
+    font-size: 24px;
+    margin-top: 45px;
+
+    @include MQ(M){
+      font-size: 36px;
+      margin-top: 75px;
+    }
+  }
+}
+
+.Share{
+  display: none;
+
+  @include MQ(L){
+    display: block;
+    position: fixed;
+    right: 4%;
+    top: 0;
+    z-index: 4;
+    border-left: 2px solid $sugar-cane;
+    border-right: 2px solid $sugar-cane;
+    border-bottom: 2px solid $sugar-cane;
+    padding: 2px 6px;
+
+    .Social{
+      svg{
+        height: 24px;
+        width: 24px;
+      }
+
+      li{
+        margin: 0 4px;
+      }
+    }
   }
 }

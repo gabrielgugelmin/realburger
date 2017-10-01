@@ -18,13 +18,66 @@
 
 <body>
 	<div class="PageWrapper">
-		<header class="Header">
+		<nav class="Bar">
+			<div class="Container">
+				<img src="assets/img/logo-small.png" alt="Real Burger" class="Bar__logo">
+
+				<nav class="Menu">
+					<ul>
+						<li><a href="sobre.html">SOBRE</a></li>
+						<li class="Menu--hasSub">
+							<a href="#">CARDÁPIO</a>
+
+							<ul class="Menu-sub">
+								<li>CARDÁPIO</li>
+								<li class="js-back"><a href="#/">VOLTAR</a></li>
+
+								<li><a href="#/" target="_blank">ALPHAVILLE</a></li>
+								<li><a href="#/" target="_blank">SHOPPING PAULISTA</a></li>
+								<li><a href="#/" target="_blank">TATUAPÉ</a></li>
+							</ul>
+						</li>
+						<li><a href="#/">GALERIA</a></li>
+						<li class="Menu--hasSub">
+							<a href="#">PEDIDO ONLINE</a>
+
+							<ul class="Menu-sub">
+								<li>PEDIDO ONLINE</li>
+								<li class="js-back"><a href="#/">VOLTAR</a></li>
+
+								<li><a href="#/" target="_blank">ALPHAVILLE</a></li>
+								<li><a href="#/" target="_blank">SHOPPING PAULISTA</a></li>
+								<li><a href="#/" target="_blank">TATUAPÉ</a></li>
+							</ul>
+						</li>
+						<li><a href="#/">NOSSAS LOJAS</a></li>
+						<li><a href="#/">CONTATO</a></li>
+					</ul>
+				</nav>
+
+				<a href="#/" class="MenuTrigger">
+					<span></span>
+				</a>
+			</div> <!-- Container -->
+		</nav> <!-- Bar -->
+		<header class="Header" id="Header">
 			<img src="assets/img/logo.png" alt="Real Burger" class="Header__logo">
 
 			<nav class="Menu">
 				<ul>
-					<li><a href="#/">SOBRE</a></li>
-					<li><a href="#/">CARDÁPIO</a></li>
+					<li><a href="sobre.html">SOBRE</a></li>
+					<li class="Menu--hasSub">
+						<a href="#">CARDÁPIO</a>
+
+						<ul class="Menu-sub">
+							<li>CARDÁPIO</li>
+							<li class="js-back"><a href="#/">VOLTAR</a></li>
+
+							<li><a href="#/" target="_blank">ALPHAVILLE</a></li>
+							<li><a href="#/" target="_blank">SHOPPING PAULISTA</a></li>
+							<li><a href="#/" target="_blank">TATUAPÉ</a></li>
+						</ul>
+					</li>
 					<li><a href="#/">GALERIA</a></li>
 					<li class="Menu--hasSub">
 						<a href="#">PEDIDO ONLINE</a>
@@ -42,10 +95,6 @@
 					<li><a href="#/">CONTATO</a></li>
 				</ul>
 			</nav>
-
-			<a href="#/" class="MenuTrigger">
-				<span></span>
-			</a>
 
 			<a class="Header__call Button" href="#/">
 				<span>PEÇA AGORA</span>
@@ -84,7 +133,14 @@
           </article> <!-- Store -->
     
           <article class="Content--right">
-            <div class="Content__img" style="background-image: url(assets/img/loja/loja2.jpg);"></div>
+            <div class="Content__img">
+							<div class="Content__slider js-sliderContent">
+								<div class="Content__sliderItem" style="background-image: url(assets/img/p1.jpg);"></div>
+								<div class="Content__sliderItem" style="background-image: url(assets/img/p2.jpg);"></div>
+								<div class="Content__sliderItem" style="background-image: url(assets/img/p3.jpg);"></div>
+								<div class="Content__sliderItem" style="background-image: url(assets/img/p4.jpg);"></div>
+							</div>
+						</div>
     
             <div class="Content__text">
               <h2 class="line">
@@ -105,25 +161,20 @@
               </p>
             </div> <!-- Content__text -->
           </article> <!-- Store -->
-        </div>
-      </div>
-      
-      <section class="Media">
-        <div class="Container">
-          <div class="Title">
-            <h2 class="line"><span>REDES SOCIAIS</span></h2>
-  
-            <div class="Media__content">
-              <div class="Media__column">
-                <img src="assets/img/icons/facebook.svg" alt="Facebook">
-              </div>
-              <div class="Media__column">
-                <img src="assets/img/icons/instagram.svg" alt="Instagram">
-              </div>
-            </div> <!-- Media__content -->
-          </div> <!-- Title -->
-        </div>
-      </section> <!-- Media -->
+        </div> <!-- Content--internal -->
+
+				<div class="Excerpt">
+					<p>
+						No REAL BURGER trabalhamos para oferecer a melhor experiência a nossos clientes e amigos. Portanto, além da excelente comida, 
+o ambiente bem cuidado e o atendimento atencioso são essenciais! Gostamos de tudo bem casual. 
+						<br>Até a nossa trilha sonora foi pensada para deixar todos bem à vontade.
+					</p>
+
+					<h6>
+						MUITO PRAZER, SOMOS O REAL BURGER.
+					</h6>
+				</div>
+      </div> <!-- Container -->
 		</main> <!-- PageContent -->
 
 		

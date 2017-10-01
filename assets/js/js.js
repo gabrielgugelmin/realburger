@@ -20,7 +20,7 @@ $(function(){
     $(this).siblings('.Menu-sub').addClass('Menu-sub--subOpen');
     $(this).addClass('is-selected');
     $('.Menu').addClass('Menu--subOpen');
-    $('#Header').addClass('is-expanded');
+    $('.Bar').addClass('subOpen');
   });
 
   // volta ao menu principal
@@ -33,11 +33,19 @@ $(function(){
 
   // menu fixo ao scollar
   $(window).scroll(function(){
+    var altura;
+
+    if(checkWindowWidth() == 'mobile'){
+      altura = 80;
+    } else {
+      altura = $(window).height() - ( $(window).height() * 0.5 );
+    }
     
-    if( $(this).scrollTop() >= 0 ){
-      $('#Header').addClass('is-scrolling');
+    if( $(this).scrollTop() >= altura ){
+      $('.Bar').addClass('is-scrolling');
     } else{
-    	$('#Header').removeClass('is-scrolling');
+      $('.Bar').removeClass('is-scrolling');
+      closeMenu();
     }
   });
 
@@ -84,6 +92,14 @@ $(function(){
       }
     ]
   });
+
+  $('.js-sliderContent').slick({
+    arrows: false,
+    autoplay: true,
+    dots: false,
+    mobileFirst: true,
+    speed: 800
+  });
   
 });
 
@@ -91,7 +107,7 @@ function closeMenu(){
   $('.Menu').removeClass('Menu--open');
   $('.Menu').removeClass('Menu--subOpen');
   $('#Header').removeClass('is-expanded');
-
+  $('.Bar').removeClass('subOpen');
   $('.Menu-sub').removeClass('Menu-sub--subOpen');
   $('.MenuTrigger').removeClass('is-open');
 

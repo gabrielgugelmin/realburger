@@ -11,10 +11,12 @@
   top: 0;  
   visibility: hidden;
   width: calc(100% - 90px);
-  z-index: 1;
+  z-index: 3;
+
 
   @include MQ(L){
     @include transform(none);
+    @include transition(all .4s ease);
     text-align: center;
 
     background-color: transparent;
@@ -33,6 +35,21 @@
     top: 55%;
     visibility: visible;
     width: 100%;
+
+    &__logo{
+      @include transition(all .2s ease);
+      opacity: 0;
+      visibility: hidden;
+      
+      a{
+        background: url(../img/logo-small.png) 0 0/contain no-repeat;
+        color: transparent !important;
+        display: block;
+        height: 60px;
+        width: 70px;
+      }
+      
+    }
   }
 
   // MODIFICADORES
@@ -85,7 +102,7 @@
         &::after{
           @include transform(none);
           @include transition(all .3s ease);
-          background: transparent url(../img/icon/selected.png) no-repeat center bottom;
+          background: transparent url(../img/icons/selected.png) no-repeat center bottom;
           background-size: cover;
           bottom: -2px;
           content: "";
@@ -137,6 +154,7 @@
       padding: 0;
       display: inline-block;
       text-align: center;
+      width: 100%;
     }
 
     a{
@@ -162,6 +180,7 @@
       @include MQ(L){
         display: inline-block;
         padding: 0 15px;
+        vertical-align: middle;
       }
     }
   }
@@ -191,7 +210,7 @@
       top: 60px;
       width: calc(100% - 290px);
 
-      &::after{
+      /*&::after{
         @include transition(width .5s ease .15s, opacity .4s ease .1s);
 
         background-color: white;
@@ -202,7 +221,7 @@
         position: absolute;
         opacity: 0;
         width: 50%;
-      }
+      }*/
     }
 
     &--subOpen{
@@ -232,7 +251,7 @@
       &:first-child{
         border: 0;
         color: $tall-poppy;
-        font-size: 26px;
+        font-size: 22px;
         font-weight: 900;
         margin-bottom: 30px;
         text-align: center;
@@ -352,7 +371,7 @@
 	position: absolute;
 	right: 25px;
 	text-decoration: none;
-	top: 48px;
+	top: 30px;
 	width: 32px;
 	z-index: 2;
 
