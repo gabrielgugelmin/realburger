@@ -36,10 +36,25 @@ get_header(); ?>
       <article class="Content--right">
         <div class="Content__img">
           <div class="Content__slider js-sliderContent">
-            <div class="Content__sliderItem" style="background-image: url(<?php echo get_field('imagem_carrossel_1'); ?>);"></div>
-            <div class="Content__sliderItem" style="background-image: url(<?php echo get_field('imagem_carrossel_2'); ?>);"></div>
-            <div class="Content__sliderItem" style="background-image: url(<?php echo get_field('imagem_carrossel_3'); ?>);"></div>
-            <div class="Content__sliderItem" style="background-image: url(<?php echo get_field('imagem_carrossel_4'); ?>);"></div>
+            <?php 
+              if( get_field('imagem_carrossel_1') ){ ?>
+                <div class="Content__sliderItem" style="background-image: url(<?php echo get_field('imagem_carrossel_1'); ?>);"></div>
+              <?php 
+              }
+              if( get_field('imagem_carrossel_2') ){ ?>
+                <div class="Content__sliderItem" style="background-image: url(<?php echo get_field('imagem_carrossel_2'); ?>);"></div>
+              <?php 
+              }
+              if( get_field('imagem_carrossel_3') ){ ?>
+                <div class="Content__sliderItem" style="background-image: url(<?php echo get_field('imagem_carrossel_3'); ?>);"></div>
+              <?php 
+              }
+              if( get_field('imagem_carrossel_4') ){ ?>
+                <div class="Content__sliderItem" style="background-image: url(<?php echo get_field('imagem_carrossel_4'); ?>);"></div>
+              <?php 
+              }
+            
+            ?>
           </div>
         </div>
 

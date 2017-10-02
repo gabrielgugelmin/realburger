@@ -27,6 +27,15 @@
 </head>
 <body>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.10&appId=178694185943977";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="Overlay"></div>
 
 	<div class="PageWrapper">
@@ -57,7 +66,7 @@
 					<?php wp_nav_menu(array( 'menu_class' => null, 'container' => null )); ?>
 				</nav>
 
-				<nav class="Menu">
+				<!-- <nav class="Menu">
 					<ul>
 						<li><a href="sobre.html">SOBRE</a></li>
 						<li class="Menu--hasSub">
@@ -88,7 +97,7 @@
 						<li><a href="#/">NOSSAS LOJAS</a></li>
 						<li><a href="#/">CONTATO</a></li>
 					</ul>
-				</nav>
+				</nav> -->
 
 				<a href="#/" class="MenuTrigger">
 					<span></span>
@@ -100,6 +109,10 @@
 			<img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="Real Burger" class="Header__logo">
 
 			<nav class="Menu">
+				<?php wp_nav_menu(array( 'menu_class' => null, 'container' => null )); ?>
+			</nav>
+
+			<!-- <nav class="Menu">
 				<ul>
 					<li><a href="sobre.html">SOBRE</a></li>
 					<li class="Menu--hasSub">
@@ -130,7 +143,7 @@
 					<li><a href="#/">NOSSAS LOJAS</a></li>
 					<li><a href="#/">CONTATO</a></li>
 				</ul>
-			</nav>
+			</nav> -->
 
 			
 
@@ -138,5 +151,5 @@
 				<span>PEÇA AGORA</span>
 			</a>
 
-			<a href="#galeria"></a>
+			<a href="#galeria" class="js-scroll"></a>
 		</header>

@@ -175,14 +175,6 @@ html, body {
   background: url(../img/icons/brick.svg) 0 0;
 }
 
-.Cardapio{
-  text-align: center;
-
-  @include MQ(M){
-    padding: 100px 0;
-  }
-}
-
 .Content{
   margin-bottom: 65px;
 
@@ -210,6 +202,7 @@ html, body {
   h3{
     font-size: 30px;
     margin-bottom: 10px;
+    text-transform: uppercase;
 
     @include MQ(M){
       font-size: 36px;
@@ -319,6 +312,7 @@ html, body {
 
   &__slider{
     height: 100%;
+    max-height: 700px;
 
     .slick-list,
     .slick-track{
@@ -333,7 +327,18 @@ html, body {
   }
 }
 
+.Cardapio{
+  text-align: center;
+  margin: 0;
+
+  @include MQ(M){
+    padding: 100px 0;
+  }
+}
+
 .Media{
+  padding-bottom: 90px;
+  
   &__content{
     @include MQ(M){
       display: flex;
@@ -349,6 +354,10 @@ html, body {
     @include MQ(M){
       flex: 1;
     }
+  }
+
+  &__box{
+    margin-top: 20px;
   }
 }
 

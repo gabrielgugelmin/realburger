@@ -27,46 +27,6 @@
     @include transition(all .15s ease);
   }
 
-  /*&.is-scrolling{
-    
-    @include MQ(L){
-
-      .Header__logo,
-      .Header__call{
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .Header__call{
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .Menu__logo{
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .Menu{
-        top: 0;
-        border: 0;
-        background-color: $cod-gray;
-        width: 100%;
-        max-width: 100%;
-        position: fixed;
-        left: 0;
-        height: 74px;
-
-        li{
-          a{
-            font-size: 14px;
-          }
-        }
-      }
-    }
-  }*/
-
-
   @include MQ(L){
     //z-index: 2;
   }
@@ -83,7 +43,23 @@
 
   .Menu{
     border: 0;
-    top: 12px;
+
+    @include MQ(L){
+      top: 0;
+      height: 100%;
+
+      > ul{
+        height: 100%;
+
+        > li > a{
+          line-height: 62px;
+        }
+      }
+
+      .Menu-sub{
+        top: 74px;
+      }
+    }
   }
 
   .Container{
@@ -120,10 +96,6 @@
     .MenuTrigger{
       @include center(y);
     }
-  }
-
-  &.subOpen{
-    height: 130px;
   }
 
   .Menu{

@@ -12,7 +12,7 @@ get_header(); ?>
 			<section class="Banner--photo" style="background-image: url(<?php bloginfo('template_directory'); ?>/assets/img/banner.jpg);">
 			
 			</section> <!-- Banner -->
-			<section class="Gallery">
+			<section class="Gallery" id="galeria">
 				<div class="Container">
 					<div class="Title">
 						<h2 class="line">
@@ -44,175 +44,71 @@ get_header(); ?>
 				</a>
 			</section>
 
-			<section class="Stores">
+			<section class="Stores" id="lojas">
 				<div class="Container">
 					<div class="Title">
 						<h2 class="line">
 							<span>NOSSAS LOJAS</span>
 						</h2>
 					</div> <!-- Title -->
+
+					<?php 
+						$args = array(			  
+							'post_type'   => 'lojas',
+							'orderby'     => 'menu_order',
+							'order'				=> 'ASC'
+						);
+						query_posts( $args);
+						$c = 0;
+						$classeLoja;
+
+						while ( have_posts() ) : the_post();
+
+						$imagem = get_field( 'imagem' );
+						$nome_loja = get_field( 'nome_loja' );
+						$endereco = get_field( 'endereco' );
+						$telefone = get_field( 'telefone' );
+						$horario = get_field( 'horario' );
+						$estacionamento = get_field( 'estacionamento' );
+
+						if($c % 2 == 0){
+							$classeLoja = 'Content--left';
+						} else {
+							$classeLoja = 'Content--right';
+						}
+					?>
+					
 				
-					<article class="Content--left">
-						<div class="Content__img" style="background-image: url(<?php bloginfo('template_directory'); ?>/assets/img/loja/loja1.jpg);"></div>
+					<article class="<?php echo $classeLoja; ?>">
+						<div class="Content__img" style="background-image: url(<?php echo $imagem; ?>)"></div>
 
 						<div class="Content__text">
-							<h3>ALPHAVILLE</h3>
+							<h3><?php echo $nome_loja; ?></h3>
 
 							<dl>
 								<dt>ENDEREÇO</dt>
-								<dd>Av. Sagitário, 138 - Alphaville Barueri<br>Shopping Alpha Square</dd>
+								<dd><?php echo $endereco; ?></dd>
 
 								<dt>TELEFONE</dt>
-								<dd>(11) 4193-8432</dd>
+								<dd><?php echo $telefone; ?></dd>
 
 								<dt>HORÁRIO</dt>
 								<dd>
-									<dl>
-										<dt>segunda a quinta</dt>
-										<dd>11:30h às 15h — 18h às 22h</dd>
-
-										<dt>sexta</dt>
-										<dd>11:30h às 15h — 18h às 23h</dd>
-
-										<dt>sábado</dt>
-										<dd>12h às 23h</dd>
-
-										<dt>domingo</dt>
-										<dd>13h às 22h</dd>
-									</dl>
+									<?php echo $horario; ?>
 								</dd>
 
 								<dt>ESTACIONAMENTO</dt>
-								<dd>R$ 10,00 = 2 horas. Lembrar de pedir o selo promocional.</dd>
+								<dd><?php echo $estacionamento; ?></dd>
 							</dl>
 						</div> <!-- Content__text -->
 					</article> <!-- Store -->
 
-					<article class="Content--right">
-						<div class="Content__img" style="background-image: url(<?php bloginfo('template_directory'); ?>/assets/img/loja/loja2.jpg);"></div>
 
-						<div class="Content__text">
-							<h3>SHOPPING PÁTIO PAULISTA</h3>
-
-							<dl>
-								<dt>ENDEREÇO</dt>
-								<dd>Rua Treze de Maio, 1947<br>Piso Paraíso - praça de alimentação</dd>
-
-								<dt>TELEFONE</dt>
-								<dd>(11) 3171-1949</dd>
-
-								<dt>HORÁRIO</dt>
-								<dd>
-									<dl>
-										<dt>segunda a domingo</dt>
-										<dd>10h às 22h</dd>
-									</dl>
-								</dd>
-
-								<dt>ESTACIONAMENTO</dt>
-								<dd>Carro R$ 14 = 2 horas. Demais R$ 4.<br>
-										Moto R$ 7 = 2 horas. Demais R$ 4.<br>
-										Bicicleta é grátis.
-								</dd>
-							</dl>
-						</div> <!-- Content__text -->
-					</article> <!-- Store -->
-
-					<article class="Content--left">
-						<div class="Content__img" style="background-image: url(<?php bloginfo('template_directory'); ?>/assets/img/loja/loja3.jpg);"></div>
-
-						<div class="Content__text">
-							<h3>TATUAPÉ</h3>
-
-							<dl>
-								<dt>ENDEREÇO</dt>
-								<dd>Rua Itapura, 1479<br>Tatuapé</dd>
-
-								<dt>TELEFONE</dt>
-								<dd>(11) 2092-4417</dd>
-
-								<dt>HORÁRIO</dt>
-								<dd>
-									<dl>
-										<dt>terça a quinta</dt>
-										<dd>11:30h às 15h — 18h às 23h</dd>
-
-										<dt>sexta</dt>
-										<dd>11:30h às 15h — 18h às 00h</dd>
-
-										<dt>sábado</dt>
-										<dd>12h às 00h</dd>
-
-										<dt>domingo</dt>
-										<dd>12h às 00h</dd>
-									</dl>
-								</dd>
-							</dl>
-						</div> <!-- Content__text -->
-					</article> <!-- Store -->
-
-					<article class="Content--right">
-						<div class="Content__img" style="background-image: url(<?php bloginfo('template_directory'); ?>/assets/img/loja/loja2.jpg);"></div>
-
-						<div class="Content__text">
-							<h3>SHOPPING PÁTIO PAULISTA</h3>
-
-							<dl>
-								<dt>ENDEREÇO</dt>
-								<dd>Rua Treze de Maio, 1947<br>Piso Paraíso - praça de alimentação</dd>
-
-								<dt>TELEFONE</dt>
-								<dd>(11) 3171-1949</dd>
-
-								<dt>HORÁRIO</dt>
-								<dd>
-									<dl>
-										<dt>segunda a domingo</dt>
-										<dd>10h às 22h</dd>
-									</dl>
-								</dd>
-
-								<dt>ESTACIONAMENTO</dt>
-								<dd>Carro R$ 14 = 2 horas. Demais R$ 4.<br>
-										Moto R$ 7 = 2 horas. Demais R$ 4.<br>
-										Bicicleta é grátis.
-								</dd>
-							</dl>
-						</div> <!-- Content__text -->
-					</article> <!-- Store -->
-
-					<article class="Content--left">
-						<div class="Content__img" style="background-image: url(<?php bloginfo('template_directory'); ?>/assets/img/loja/loja3.jpg);"></div>
-
-						<div class="Content__text">
-							<h3>TATUAPÉ</h3>
-
-							<dl>
-								<dt>ENDEREÇO</dt>
-								<dd>Rua Itapura, 1479<br>Tatuapé</dd>
-
-								<dt>TELEFONE</dt>
-								<dd>(11) 2092-4417</dd>
-
-								<dt>HORÁRIO</dt>
-								<dd>
-									<dl>
-										<dt>terça a quinta</dt>
-										<dd>11:30h às 15h — 18h às 23h</dd>
-
-										<dt>sexta</dt>
-										<dd>11:30h às 15h — 18h às 00h</dd>
-
-										<dt>sábado</dt>
-										<dd>12h às 00h</dd>
-
-										<dt>domingo</dt>
-										<dd>12h às 00h</dd>
-									</dl>
-								</dd>
-							</dl>
-						</div> <!-- Content__text -->
-					</article> <!-- Store -->
+					<?php 
+						$c++;
+						endwhile;
+						wp_reset_query();
+					?>
 
 				</div> <!-- Container -->
 			</section> <!-- Stores -->
@@ -231,9 +127,17 @@ get_header(); ?>
 						<div class="Media__content">
 							<div class="Media__column">
 								<img src="<?php bloginfo('template_directory'); ?>/assets/img/icons/facebook.svg" alt="Facebook">
+
+								<div class="Media__box">
+									<div class="fb-page" data-href="https://www.facebook.com/realburgeroficial/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/realburgeroficial/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/realburgeroficial/">Real Burger</a></blockquote></div>
+								</div>
 							</div>
 							<div class="Media__column">
 								<img src="<?php bloginfo('template_directory'); ?>/assets/img/icons/instagram.svg" alt="Instagram">
+
+								<div class="Media__box">
+									<section id="instafeed" class="Instafeed"></section>
+								</div>
 							</div>
 						</div> <!-- Media__content -->
 					</div> <!-- Title -->
