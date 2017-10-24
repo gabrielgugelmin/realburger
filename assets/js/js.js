@@ -132,10 +132,35 @@ $(function(){
       get: 'user',
       userId: '2062634298',
       clientId: '9dd32bbb00284a19b83ebe8dbda91cb6',
-      accessToken: '36490227.9dd32bb.408bfdd02c4f409d96d48cd18124f053'
+      accessToken: '2062634298.3a81a9f.ff294bf8845e48fd80dc76560c41b81b',
+      limit: 6
     });
     feed.run();
   }
+
+  // dropdown
+  $('.Dropdown').on('click', function(){
+    $(this).toggleClass('is-open');
+  });
+
+  $('.Dropdown a').on('click', function(){
+    var option = $(this).attr('data-option');
+    var value  = $(this).text();
+
+    if( option == '') option = $(this).text();
+    var set = $(this).attr('data-set'); 
+
+    $('.'+set+'').text(value).addClass('is-selected');
+    $('.'+set+'').val(option);
+  });
+
+  $('.js-contato').on('click', function(){
+    $('.Popup').addClass('open');
+  });
+
+  $('.Popup__close').on('click', function(){
+		$('.Popup').removeClass('open');	
+	});
   
 });
 

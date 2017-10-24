@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="3165.293 507.793 14.914 14.914">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fdfffc;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="fechar" transform="translate(1663.5 -3144)">
+    <line id="Line_4" data-name="Line 4" class="cls-1" x2="13.5" y2="13.5" transform="translate(1502.5 3652.5)"/>
+    <line id="Line_5" data-name="Line 5" class="cls-1" x1="13.5" y2="13.5" transform="translate(1502.5 3652.5)"/>
+  </g>
+</svg>
