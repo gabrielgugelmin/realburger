@@ -83,7 +83,7 @@ get_header(); ?>
 		</section> <!-- Gallery -->
 
 		<section class="Content Cardapio">
-			<a href="#/" class="Button--big">
+			<a href="#/" class="Button--big js-lojas">
 				<span>ver<br>cardápio</span>
 			</a>
 		</section>

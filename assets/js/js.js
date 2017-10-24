@@ -44,13 +44,19 @@ $(function(){
 
       // Using jQuery's animate() method to add smooth page scroll
       // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top - 100
-      }, 800, function(){
-    
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
+
+      if( $(hash).length ){
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top - 140
+        }, 800, function(){
+      
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } else{
+        var url = document.location.origin;
+        window.location = url + hash;
+      }      
     } // End if
   });
 
@@ -155,12 +161,16 @@ $(function(){
   });
 
   $('.js-contato').on('click', function(){
-    $('.Popup').addClass('open');
+    $('.Popup[data-modal="contato"]').addClass('open');
+  });
+
+  $('.js-lojas').on('click', function(){
+    $('.Popup[data-modal="lojas"]').addClass('open');
   });
 
   $('.Popup__close').on('click', function(){
 		$('.Popup').removeClass('open');	
-	});
+  });
   
 });
 

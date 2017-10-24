@@ -344,7 +344,7 @@ h2{
 
 		background-color: $cod-gray;
 		//box-shadow: 1px 1px 40px 5px rgba(#f1f1f2,.8);
-		max-width: 500px;
+		max-width: 640px;
 		position: absolute;
 		padding: 3.5% 2%;
 		width: 95%;
@@ -366,6 +366,33 @@ h2{
 
     &:focus{
       outline: none;
+    }
+  }
+
+  &__list{
+    list-style: none;
+    margin: 0;
+    max-width: 380px;
+    padding: 0;
+    text-align: center;
+
+    a{
+      color: $sugar-cane;
+      font-family: $roboto;
+      font-size: 16px;
+      text-decoration: none;
+
+      &:hover{
+        color: $pizazz;
+      }
+    }
+
+    li{
+      border-bottom: 1px solid $sugar-cane;
+
+      &:last-child{
+        border-bottom: 0;
+      }
     }
   }
 
@@ -393,9 +420,17 @@ h2{
   padding-top: 30px;
 
   label{
-    position: absolute;
-    top: 0;
+    color: $sugar-cane;
+    display: block;
+    font-family: $roboto;
+    font-size: 16px;
     left: 0;
+    letter-spacing: .6px;
+    line-height: 1;
+    margin-left: 10px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
   }
 
   &::after{
@@ -458,14 +493,10 @@ h2{
 		padding: 0;
 		position: absolute;
 		right: 0;
-		top: 50px;
+		top: 68px;
 		visibility: hidden;
 		width: 100%;
 		z-index: 2;
-
-		@include MQ(M){
-			top: 54px;
-		}
   }
 
   li{
@@ -484,8 +515,7 @@ h2{
     font-size: 16px;
 
     &:hover{
-      //background-color: $ochre;
-      color: white;
+      color: $pizazz;
     }
   }
 }
@@ -501,14 +531,14 @@ h2{
     position: relative;
     
     label{
-      text-transform: uppercase;
-      display: block;
-      line-height: 1;
       color: $sugar-cane;
+      display: block;
       font-family: $roboto;
       font-size: 16px;
       letter-spacing: .6px;
+      line-height: 1;
       margin-left: 10px;
+      text-transform: uppercase;
 
       span{
         color: $tall-poppy;

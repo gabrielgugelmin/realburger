@@ -26,6 +26,10 @@
 </head>
 <body>
 
+<?php
+	$is_home = is_home();
+?>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -35,7 +39,7 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="Popup">
+<div class="Popup" data-modal="contato">
 	<div class="Popup__container">
 		<h3>FALE<br>CONOSCO</h3>
 		<button class="Popup__close">
@@ -53,12 +57,12 @@
 				<input type="email" name="email">
 			</div> <!-- Form__control -->
 
-			<div class="Form__control--half">
+			<div class="Form__control">
 				<label for="assunto">ASSUNTO <span>*</span></label>
 				<input type="text" name="assunto">
 			</div> <!-- Form__control -->
 
-			<div class="Form__control--half">
+			<div class="Form__control">
 				<div class="Dropdown">
 					<label for="set-loja">LOJA</label>
 					<span class="set-loja">SELECIONE</span>
@@ -96,9 +100,46 @@
 				<textarea name="mensagem" id="mensagem" cols="30" rows="2"></textarea>
 			</div> <!-- Form__control -->
 
-
 			<input type="submit" class="Button" value="ENVIAR">
 		</form>
+
+	</div> <!-- Popup-container -->
+</div> <!-- Popup -->
+
+<div class="Popup" data-modal="lojas">
+	<div class="Popup__container">
+		<h3>ESCOLHA A LOJA<br>MAIS PRÓXIMA</h3>
+		<button class="Popup__close">
+			<img src="<?php bloginfo('template_directory'); ?>/assets/img/icons/close.svg" alt="Fechar">
+		</button>
+		
+		<?php 
+				$args = array(			  
+					'post_type'   => 'lojas',
+					'orderby'     => 'menu_order',
+					'order'				=> 'ASC'
+				);
+				query_posts( $args);
+
+				if ( have_posts() ) { ?>
+				<ul class="Popup__list">
+					<?php
+					while ( have_posts() ) : the_post();
+						$nome_loja 			= get_field( 'nome_loja' ); 
+						$link_cardapio 	= get_field( 'link_cardapio' );
+
+						if( $link_cardapio ){ ?>
+							<li><a href="<?php echo $link_cardapio; ?>" target="_blank"><?php echo strtolower($nome_loja); ?></a></li>
+						<?php 
+						}
+					endwhile; 
+					?>
+					</ul>
+				<?php 
+				}
+					wp_reset_query();
+				?>
+						
 
 	</div> <!-- Popup-container -->
 </div> <!-- Popup -->
@@ -121,7 +162,7 @@
 			</div>
 		</div>
 
-		<nav class="Bar">
+		<nav class="Bar <?php if(!$is_home) { echo 'is-visible'; } ?>">
 			<div class="Container">
 				<a href="<?php echo get_home_url(); ?>">
 					<img src="<?php bloginfo('template_directory'); ?>/assets/img/logo-small.png" alt="Real Burger" class="Bar__logo">
@@ -170,51 +211,22 @@
 			</div> <!-- Container -->
 		</nav> <!-- Bar -->
 
-		<header class="Header" id="Header">
-			<img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="Real Burger" class="Header__logo">
-
-			<nav class="Menu">
-				<?php wp_nav_menu(array( 'menu_class' => null, 'container' => null )); ?>
-			</nav>
-
-			<!-- <nav class="Menu">
-				<ul>
-					<li><a href="sobre.html">SOBRE</a></li>
-					<li class="Menu--hasSub">
-						<a href="#">CARDÁPIO</a>
-
-						<ul class="Menu-sub">
-							<li>CARDÁPIO</li>
-							<li class="js-back"><a href="#/">VOLTAR</a></li>
-
-							<li><a href="#/" target="_blank">ALPHAVILLE</a></li>
-							<li><a href="#/" target="_blank">SHOPPING PAULISTA</a></li>
-							<li><a href="#/" target="_blank">TATUAPÉ</a></li>
-						</ul>
-					</li>
-					<li><a href="#/">GALERIA</a></li>
-					<li class="Menu--hasSub">
-						<a href="#">PEDIDO ONLINE</a>
-
-						<ul class="Menu-sub">
-							<li>PEDIDO ONLINE</li>
-							<li class="js-back"><a href="#/">VOLTAR</a></li>
-
-							<li><a href="#/" target="_blank">ALPHAVILLE</a></li>
-							<li><a href="#/" target="_blank">SHOPPING PAULISTA</a></li>
-							<li><a href="#/" target="_blank">TATUAPÉ</a></li>
-						</ul>
-					</li>
-					<li><a href="#/">NOSSAS LOJAS</a></li>
-					<li><a href="#/">CONTATO</a></li>
-				</ul>
-			</nav> -->
-
-			
-
-			<a class="Header__call Button" href="#/">
-				<span>PEÇA AGORA</span>
-			</a>
-
-			<a href="#galeria" class="js-scroll"></a>
-		</header>
+		<?php 
+			if($is_home){ ?>
+				<header class="Header" id="Header">
+					<img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="Real Burger" class="Header__logo">
+		
+					<nav class="Menu">
+						<?php wp_nav_menu(array( 'menu_class' => null, 'container' => null )); ?>
+					</nav>				
+		
+					<a class="Header__call Button" href="#/">
+						<span>PEÇA AGORA</span>
+					</a>
+		
+					<a href="#galeria" class="js-scroll"></a>
+				</header>
+			<?php 
+				}
+		
+		?>

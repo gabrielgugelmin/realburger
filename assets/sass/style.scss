@@ -31,7 +31,13 @@ html, body {
 }
 
 .PageContent{
-   flex: 1;
+  flex: 1;
+
+  @include MQ(M){
+    &.internal{
+      padding-top: 74px;
+    }
+  }
 }
 
 

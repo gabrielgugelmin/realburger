@@ -11,10 +11,8 @@ get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 
-<main class="PageContent">
-  <section class="Banner--photo" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
-  
-  </section> <!-- Banner -->
+<main class="PageContent <?php if(!$is_home) { echo 'internal'; } ?>">
+  <!-- <section class="Banner--photo" style="background-image: url(<?php the_post_thumbnail_url(); ?>);"></section> -->
 
   <div class="Container">
     <div class="Content--internal">
@@ -72,13 +70,11 @@ get_header(); ?>
 
     <div class="Excerpt">
       <p>
-        No REAL BURGER trabalhamos para oferecer a melhor experiência a nossos clientes e amigos. Portanto, além da excelente comida, 
-o ambiente bem cuidado e o atendimento atencioso são essenciais! Gostamos de tudo bem casual. 
-        <br>Até a nossa trilha sonora foi pensada para deixar todos bem à vontade.
+        <?php echo get_field('fechamento', 8); ?>
       </p>
 
       <h6>
-        MUITO PRAZER, SOMOS O REAL BURGER.
+      <?php echo get_field('titulo_final', 8); ?>
       </h6>
     </div>
   </div> <!-- Container -->

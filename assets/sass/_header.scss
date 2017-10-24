@@ -75,7 +75,8 @@
     visibility: hidden;
   }
 
-  &.is-scrolling{
+  &.is-scrolling,
+  &.is-visible{
     background-color: $cod-gray;
     opacity: 1;
     visibility: visible;
