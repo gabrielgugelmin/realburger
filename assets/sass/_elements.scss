@@ -202,30 +202,6 @@ h2{
       z-index: 0;
     }
 
-    &:hover{
-      span{
-        background-color: $sugar-cane;
-        color: $cod-gray;
-        
-      }
-
-      &::before{
-        //left: 0;
-        //width: 80%;
-        //height: 8px;
-      }
-
-      &::after{
-        border: 4px solid $cod-gray;
-        content: "";
-        height: calc(100% - 16px);
-        left: 8px;
-        position: absolute;
-        top: 8px;
-        width: calc(100% - 16px);
-      }
-    }
-
     @include MQ(M){
 
       &::before{
@@ -241,6 +217,28 @@ h2{
   }
 }
 
+.no-touchevents{
+  .Button{
+    &--big{
+      &:hover{
+        span{
+          background-color: $sugar-cane;
+          color: $cod-gray;
+        }
+  
+        &::after{
+          border: 4px solid $cod-gray;
+          content: "";
+          height: calc(100% - 16px);
+          left: 8px;
+          position: absolute;
+          top: 8px;
+          width: calc(100% - 16px);
+        }
+      }
+    }
+  }
+}
 .Container{
   padding: 0 15px;
   margin: 0 auto;
@@ -345,9 +343,15 @@ h2{
 		background-color: $cod-gray;
 		//box-shadow: 1px 1px 40px 5px rgba(#f1f1f2,.8);
 		max-width: 640px;
+		padding: 3.5% 30px;
 		position: absolute;
-		padding: 3.5% 2%;
-		width: 95%;
+    max-height: 85%;
+    overflow-y: auto;
+    width: 95%;
+
+    @include MQ(M){
+      padding: 3.5% 2.5%;
+    }
 	}
 
 	&__close{
@@ -356,8 +360,8 @@ h2{
     cursor: pointer;
     height: 25px;
     position: absolute;
-    right: 45px;
-    top: 45px;
+    right: 15px;
+    top: 15px;
     width: 25px;
 
     img{
@@ -366,6 +370,11 @@ h2{
 
     &:focus{
       outline: none;
+    }
+
+    @include MQ(M){
+      right: 45px;
+      top: 45px;
     }
   }
 
@@ -413,11 +422,10 @@ h2{
 
 .Dropdown{
   cursor: pointer;
-  position: relative;
-  height: 65px;
-  border-bottom: 1px solid $sugar-cane;
   display: block;
+  height: 65px;
   padding-top: 30px;
+  position: relative;
 
   label{
     color: $sugar-cane;
@@ -527,6 +535,7 @@ h2{
 	width: 100%;
 
 	&__control{
+    border-bottom: 1px solid $sugar-cane;
 		margin-bottom: 45px;
     position: relative;
     
@@ -576,9 +585,13 @@ h2{
   textarea{
     @include transition(border-color .3s ease);
 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
     background-color: transparent;
+    //border-bottom: 1px solid $sugar-cane;
     border: 0;
-    border-bottom: 1px solid $sugar-cane;
     color: $sugar-cane;
     font-size: 16px;
     padding: 8px 10px;

@@ -1,6 +1,8 @@
 $(function(){
   clickOutsideMenu();
 
+  var ps = new PerfectScrollbar('.Popup__container');
+
   // MENU
   // click no hamburguer icon
   $('.MenuTrigger').on('click', function(e){
@@ -33,6 +35,7 @@ $(function(){
 
   // SMOOTH SCROLL
   $('.js-scroll > a').on('click', function(event) {
+    closeMenu();
 
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== '') {
@@ -160,15 +163,19 @@ $(function(){
     $('.'+set+'').val(option);
   });
 
-  $('.js-contato').on('click', function(){
+  $('.js-contato').on('click', function(e){
+    e.preventDefault();
     $('.Popup[data-modal="contato"]').addClass('open');
+    closeMenu();
   });
 
-  $('.js-lojas').on('click', function(){
+  $('.js-lojas').on('click touchend', function(e){
+    e.preventDefault();
     $('.Popup[data-modal="lojas"]').addClass('open');
   });
 
-  $('.Popup__close').on('click', function(){
+  $('.Popup__close').on('click', function(e){
+    e.preventDefault();
 		$('.Popup').removeClass('open');	
   });
   

@@ -7,7 +7,8 @@
   &__logo{
     position: absolute;
     @include center(x);
-    top: 150px;
+    //top: 150px;
+    top: 15%;
     width: 140px;
 
     @include MQ(L){
@@ -18,7 +19,8 @@
 
   &__call{
     @include center(x);
-    bottom: 140px;
+    //bottom: 140px;
+    top: calc(15% + 200px);
     position: absolute;
   }
 
@@ -28,7 +30,10 @@
   }
 
   @include MQ(L){
-    //z-index: 2;
+    &__call{
+      top: inherit;
+      bottom: 140px;
+    }
   }
 }
 
