@@ -178,6 +178,56 @@ $(function(){
     e.preventDefault();
 		$('.Popup').removeClass('open');	
   });
+
+
+  // FORM
+  $('.Form').submit(function (e) {
+    e.preventDefault();
+    form = $(this);
+
+    var qtdErro = 0;
+
+    $(this).find('[data-validate=true]').each(function () {
+      $(this).removeClass('error');
+      var value = $.trim($(this).find('input, textarea').val());
+
+      if (!value.length > 0) {
+        $(this).addClass('error');
+        qtdErro++;
+      }
+    });
+
+    if (qtdErro == 0) {
+
+      var url = document.location.origin + '/html/wp-content/themes/realburger';
+
+      var values = {
+        nome: $('.Form [name=input_nome]').val(),
+        email: $('.Form [name=input_email]').val(),
+        assunto: $('.Form [name=assunto]').val(),
+        loja: $('.Form [name=loja]').val(),
+        mensagem: $('.Form [name=input_mensagem]').val()
+      }
+
+      return $.ajax({
+        type: "POST",
+        url: url + "/sendEmail.php",
+        data: values,
+        success: function (data) {
+          var result = $.parseJSON(data);
+
+          // Exibe a modal com as informações
+          $('.Popup[data-modal="resposta"]').find('h3').text(result.titulo);
+          $('.Popup[data-modal="resposta"]').find('p').html(result.corpo);
+          $('.Popup[data-modal="resposta"]').addClass('open');
+
+          // Limpa o form
+          $('.Form').find('input, textarea').val('');
+        }
+      });
+    }
+
+  });
   
 });
 

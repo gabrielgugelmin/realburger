@@ -70,17 +70,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</button>
 		
 		<form action="" class="Form">
-			<div class="Form__control" required>
+			<div class="Form__control" data-validate="true">
 				<label for="nome">NOME <span>*</span></label>
 				<input type="text" name="nome">
 			</div> <!-- Form__control -->
 
-			<div class="Form__control" required>
+			<div class="Form__control" data-validate="true">
 				<label for="email">EMAIL <span>*</span></label>
 				<input type="email" name="email">
 			</div> <!-- Form__control -->
 
-			<div class="Form__control">
+			<div class="Form__control" data-validate="true">
 				<label for="assunto">ASSUNTO <span>*</span></label>
 				<input type="text" name="assunto">
 			</div> <!-- Form__control -->
@@ -94,7 +94,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<?php 
 						$args = array(			  
 							'post_type'   => 'lojas',
-							'orderby'     => 'menu_order',
+							'orderby'     => 'title',
 							'order'				=> 'ASC'
 						);
 						query_posts( $args);
@@ -103,9 +103,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<ul class="js-scrollbar">
 							<?php
 							while ( have_posts() ) : the_post();
-								$nome_loja = get_field( 'nome_loja' ); ?>
+								$nome_loja = get_field( 'nome_loja' ); 
+								$nome_sub = get_field( 'nome_loja_seg' ); ?>
 								
-								<li><a href="#" data-set="set-loja" data-option="<?php echo to_permalink($nome_loja); ?>"><?php echo $nome_loja; ?></a></li>
+								<li><a href="#" data-set="set-loja" data-option="<?php echo to_permalink($nome_loja); ?>"><?php echo $nome_loja . ' ' . $nome_sub; ?></a></li>
 
 							<?php 
 							endwhile; 
@@ -118,7 +119,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div> <!-- Dropdown -->
 			</div> <!-- Form__control -->
 
-			<div class="Form__control" required>
+			<div class="Form__control" data-validate="true">
 				<label for="mensagem">MENSAGEM <span>*</span></label>
 				<textarea name="mensagem" id="mensagem" cols="30" rows="2"></textarea>
 			</div> <!-- Form__control -->
@@ -164,6 +165,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				?>
 						
 
+	</div> <!-- Popup-container -->
+</div> <!-- Popup -->
+
+<div class="Popup">
+	<div class="Popup__container">
+		<h3><?php echo $mensagem_titulo; ?></h3>
+		<p><?php echo $mensagem_corpo; ?></p>
+
+		<button class="Popup__close">fechar</button>
 	</div> <!-- Popup-container -->
 </div> <!-- Popup -->
 

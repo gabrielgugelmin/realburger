@@ -380,7 +380,7 @@ h2{
 
   &__list{
     list-style: none;
-    margin: 0;
+    margin: 0 auto;
     max-width: 380px;
     padding: 0;
     text-align: center;
@@ -411,7 +411,7 @@ h2{
     margin-top: 15px;
     display: block;
     font-size: 28px;
-    text-align: left;
+    text-align: center;
 	}
 
 	p{
@@ -517,7 +517,7 @@ h2{
     color: $sugar-cane;
     display: block;
     padding: 3px 15px;
-    text-transform: lowercase;
+    //text-transform: lowercase;
     text-decoration: none;
     font-family: $roboto;
     font-size: 16px;

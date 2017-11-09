@@ -301,7 +301,8 @@ html, body {
 
       .Content__img{
         //flex: 1.9;
-        height: auto;
+        //height: auto;
+        height: 440px;
         margin: 0;
         width: 60%;
       }
@@ -375,6 +376,8 @@ html, body {
   }
 
   &__column{
+    margin-bottom: 60px;
+    
     > img{
       height: 24px;
       width: 24px;
