@@ -105,7 +105,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							while ( have_posts() ) : the_post();
 								$nome_loja = get_field( 'nome_loja' ); ?>
 								
-								<li><a href="#" data-set="set-loja" data-option="<?php echo to_permalink($nome_loja); ?>"><?php echo strtolower($nome_loja); ?></a></li>
+								<li><a href="#" data-set="set-loja" data-option="<?php echo to_permalink($nome_loja); ?>"><?php echo $nome_loja; ?></a></li>
 
 							<?php 
 							endwhile; 
@@ -152,7 +152,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						$link_cardapio 	= get_field( 'link_cardapio' );
 
 						if( $link_cardapio ){ ?>
-							<li><a href="<?php echo $link_cardapio; ?>" target="_blank"><?php echo strtolower($nome_loja); ?></a></li>
+							<li><a href="<?php echo $link_cardapio; ?>" target="_blank"><?php echo $nome_loja; ?></a></li>
 						<?php 
 						}
 					endwhile; 

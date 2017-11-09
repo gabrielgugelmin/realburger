@@ -41,14 +41,14 @@
 
 h2{
   margin-bottom: 40px;
-  font-size: 36px;
+  font-size: 28px;
 
   @include MQ(L){
-    font-size: 46px;
+    font-size: 36px;
   }
 
   @include MQ(XL){
-    font-size: 58px;
+    font-size: 46px;
   }
 }
 

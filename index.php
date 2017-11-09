@@ -110,6 +110,7 @@ get_header(); ?>
 
 					$imagem = get_field( 'imagem' );
 					$nome_loja = get_field( 'nome_loja' );
+					$nome_sub = get_field( 'nome_loja_seg' );
 					$endereco = get_field( 'endereco' );
 					$telefone = get_field( 'telefone' );
 					$horario = get_field( 'horario' );
@@ -127,7 +128,7 @@ get_header(); ?>
 					<div class="Content__img" style="background-image: url(<?php echo $imagem; ?>)"></div>
 
 					<div class="Content__text">
-						<h3><?php echo $nome_loja; ?></h3>
+						<h3><?php echo $nome_loja; ?><span><?php echo $nome_sub; ?></span></h3>
 
 						<dl>
 							<?php
