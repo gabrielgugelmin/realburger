@@ -107,7 +107,8 @@ $(function(){
 
 		if(qtdErro == 0){
 
-      var url = document.location.origin;
+      //var url = document.location.origin;
+      var url = document.location.origin + '/html/wp-content/themes/realburger';
 
       var values = {
         nome: $('.Form [name=input_nome]').val(),
@@ -132,20 +133,6 @@ $(function(){
 
           // Limpa o form
           $('.Form').find('input, textarea').val('');
-
-          var google_conversion_id = 852644769;
-          var google_conversion_language = "en";
-          var google_conversion_format = "3";
-          var google_conversion_color = "ffffff";
-          var google_conversion_label = "vnndCLCGpnEQoafJlgM";
-          var google_conversion_value = 1.00;
-          var google_conversion_currency = "BRL";
-          var google_remarketing_only = false;
-          
-          if (100) {
-              google_conversion_value = 1;
-          }
-          $.getScript( "http://www.googleadservices.com/pagead/conversion.js" );
         }
       });
 		}

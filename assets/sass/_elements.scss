@@ -406,17 +406,20 @@ h2{
   }
 
 	h3{
-		line-height: 1.4;
-		margin-bottom: 30px;
-    margin-top: 15px;
     display: block;
     font-size: 28px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    margin-top: 15px;
     text-align: center;
 	}
 
 	p{
 		font-size: 17px;
 		line-height: 1.4;
+    color: white;
+    font-family: $roboto;
+    text-align: center;
 	}
 }
 
@@ -618,4 +621,37 @@ h2{
 
 .Instafeed{
   max-width: 300px;
+}
+
+/* This used to work for the parent element of button divs */
+/* But it does not work with newer browsers, the below doesn't hide the play button parent div */
+
+*::-webkit-media-controls-panel {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* Old shadow dom for play button */
+
+*::-webkit-media-controls-play-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* New shadow dom for play button */
+
+/* This one works! */
+
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+video::-webkit-media-controls {
+    display:none !important;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
 }

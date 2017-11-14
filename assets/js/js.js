@@ -135,7 +135,6 @@ $(function(){
   });
 
   if( $('#instafeed').length ){
-    console.log('asdasdasd')
 
     var feed = new Instafeed({
       get: 'user',
@@ -199,15 +198,18 @@ $(function(){
 
     if (qtdErro == 0) {
 
-      var url = document.location.origin + '/html/wp-content/themes/realburger';
+      var url = document.location.origin + '/wp-content/themes/realburger';
+      console.log(url);
 
       var values = {
-        nome: $('.Form [name=input_nome]').val(),
-        email: $('.Form [name=input_email]').val(),
+        nome: $('.Form [name=nome]').val(),
+        email: $('.Form [name=email]').val(),
         assunto: $('.Form [name=assunto]').val(),
-        loja: $('.Form [name=loja]').val(),
-        mensagem: $('.Form [name=input_mensagem]').val()
+        loja: $('.Form [name=loja]').text(),
+        mensagem: $('.Form [name=mensagem]').val()
       }
+
+      console.log($('.Form [name=loja]').val());
 
       return $.ajax({
         type: "POST",
@@ -215,14 +217,18 @@ $(function(){
         data: values,
         success: function (data) {
           var result = $.parseJSON(data);
+          console.log(data);
+          console.log(result);
 
           // Exibe a modal com as informações
           $('.Popup[data-modal="resposta"]').find('h3').text(result.titulo);
           $('.Popup[data-modal="resposta"]').find('p').html(result.corpo);
           $('.Popup[data-modal="resposta"]').addClass('open');
 
+          $('.Popup').not('[data-modal="resposta"]').removeClass('open');
+
           // Limpa o form
-          $('.Form').find('input, textarea').val('');
+          $('.Form').find('input[type="text"], input[type="email"], textarea').val('');
         }
       });
     }

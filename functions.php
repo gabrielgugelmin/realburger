@@ -93,6 +93,13 @@ function excerpt($limit){
   return $excerpt;
 }
 
+function addhttp($url) {
+  if (!preg_match("~^(?:f|ht)tps?://~i", $url)) {
+      $url = "http://" . $url;
+  }
+  return $url;
+}
+
 function wp_custom_breadcrumbs() {
  
   $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show

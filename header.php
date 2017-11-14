@@ -106,7 +106,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								$nome_loja = get_field( 'nome_loja' ); 
 								$nome_sub = get_field( 'nome_loja_seg' ); ?>
 								
-								<li><a href="#" data-set="set-loja" data-option="<?php echo to_permalink($nome_loja); ?>"><?php echo $nome_loja . ' ' . $nome_sub; ?></a></li>
+								<li><a href="#" data-set="set-loja" data-option="<?php echo to_permalink($nome_loja.'-'.$nome_sub); ?>"><?php echo $nome_loja . ' ' . $nome_sub; ?></a></li>
 
 							<?php 
 							endwhile; 
@@ -152,8 +152,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						$nome_loja 			= get_field( 'nome_loja' ); 
 						$link_cardapio 	= get_field( 'link_cardapio' );
 
+						addhttp($link_cardapio);
+
 						if( $link_cardapio ){ ?>
-							<li><a href="<?php echo $link_cardapio; ?>" target="_blank"><?php echo $nome_loja; ?></a></li>
+							<li><a href="http://<?php echo $link_cardapio; ?>" target="_blank"><?php echo $nome_loja; ?></a></li>
 						<?php 
 						}
 					endwhile; 
@@ -168,12 +170,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div> <!-- Popup-container -->
 </div> <!-- Popup -->
 
-<div class="Popup">
+<div class="Popup" data-modal="resposta">
 	<div class="Popup__container">
+		<button class="Popup__close">
+			<img src="<?php bloginfo('template_directory'); ?>/assets/img/icons/close.svg" alt="Fechar">
+		</button>
+		
 		<h3><?php echo $mensagem_titulo; ?></h3>
 		<p><?php echo $mensagem_corpo; ?></p>
-
-		<button class="Popup__close">fechar</button>
 	</div> <!-- Popup-container -->
 </div> <!-- Popup -->
 

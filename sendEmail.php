@@ -4,26 +4,29 @@ require_once('phpmailer/class.phpmailer.php');
 $nome     	= !empty($_POST['nome']) ? $_POST['nome'] : 'Não informado';
 $email 			= !empty($_POST['email']) ? $_POST['email'] : 'Não informado';
 $assunto    = !empty($_POST['assunto']) ? $_POST['assunto'] : 'Não informado';
-$loja     	= !empty($_POST['loja']);
+$loja     	= !empty($_POST['loja']) ? $_POST['loja'] : 'Não informado';
 $mensagem 	= !empty($_POST['mensagem']) ? $_POST['mensagem'] : 'Não informado';
 
 $mailer = new PHPMailer();
 $mailer->IsSMTP();
 $mailer->IsHTML(true);
 $mailer->CharSet = 'UTF-8';
-$mailer->SMTPDebug = 1;
+//$mailer->SMTPDebug = 1;
 $mailer->Port = 587; //Indica a porta de conexão para a saída de e-mails. Utilize obrigatoriamente a porta 587.
  
-$mailer->Host = 'mail.realburg.nextmp.net'; //Onde em 'servidor_de_saida' deve ser alterado por um dos hosts abaixo:
+ // mail.realburg.nextmp.net smtp.gmail.com mail.realburger.com.br
+$mailer->Host = 'smtp.gmail.com'; //Onde em 'servidor_de_saida' deve ser alterado por um dos hosts abaixo:
 //Para cPanel: 'mail.dominio.com.br';
 //Para Plesk 11 / 11.5: 'smtp.dominio.com.br';
  
 //Descomente a linha abaixo caso revenda seja 'Plesk 11.5 Linux'
-//$mailer->SMTPSecure = 'tls';
+$mailer->SMTPSecure = 'tls';
  
 $mailer->SMTPAuth = true; //Define se haverá ou não autenticação no SMTP
+// postmaster@realburger.com.br
 $mailer->Username = 'contato@realburger.com.br'; //Informe o e-mail o completo
-$mailer->Password = '123'; //Senha da caixa postal
+// real123456 HuntsGiftedAfieldScubas981
+$mailer->Password = 'real123456'; //Senha da caixa postal
 $mailer->FromName = $nome; //Nome que será exibido para o destinatário
 $mailer->From = 'contato@realburger.com.br'; //Obrigatório ser a mesma caixa postal indicada em "username"
 $mailer->AddAddress('contato@realburger.com.br'); //Destinatários
