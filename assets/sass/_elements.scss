@@ -259,10 +259,10 @@ h2{
 .Excerpt{
   text-align: center;
   max-width: 940px;
-  margin: 90px auto;
+  margin: 70px auto;
 
   @include MQ(M){
-    margin: 180px auto;
+    margin: 100px auto;
   }
 
   p{
@@ -623,9 +623,6 @@ h2{
   max-width: 300px;
 }
 
-/* This used to work for the parent element of button divs */
-/* But it does not work with newer browsers, the below doesn't hide the play button parent div */
-
 *::-webkit-media-controls-panel {
   display: none!important;
   -webkit-appearance: none;
@@ -648,10 +645,11 @@ h2{
 }
 
 video::-webkit-media-controls {
-    display:none !important;
+  opacity: 0;
+  display:none !important;
 }
 
 video::-webkit-media-controls-start-playback-button {
-  display: none !important;
   -webkit-appearance: none;
+  display: none !important;
 }

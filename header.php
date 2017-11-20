@@ -155,7 +155,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						addhttp($link_cardapio);
 
 						if( $link_cardapio ){ ?>
-							<li><a href="http://<?php echo $link_cardapio; ?>" target="_blank"><?php echo $nome_loja; ?></a></li>
+							<li><a href="<?php echo addhttp($link_cardapio); ?>" target="_blank"><?php echo $nome_loja; ?></a></li>
 						<?php 
 						}
 					endwhile; 

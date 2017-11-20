@@ -2,7 +2,7 @@
   height: 100%;
   position: absolute;
   width: 100%;
-  z-index: 2;
+  //z-index: 2;
 
   &__logo{
     position: absolute;
@@ -10,6 +10,7 @@
     //top: 150px;
     top: 15%;
     width: 140px;
+    z-index: 2;
 
     @include MQ(L){
       top: 12%;
@@ -22,6 +23,7 @@
     //bottom: 140px;
     top: calc(15% + 200px);
     position: absolute;
+    z-index: 2;
   }
 
   &__logo,

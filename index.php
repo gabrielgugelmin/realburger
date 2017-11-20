@@ -17,9 +17,10 @@ get_header(); ?>
 
 		if( $video_webm && $video_mp4 ){ ?>
 			<section class="Banner">
-				<video poster="<?php echo $banner_img; ?>" id="bgvid" playsinline webkit-playsinline autoplay muted loop>
-					<source src="<?php echo $video_webm; ?>" type="video/webm">
+				<video poster="<?php echo $banner_img; ?>" id="bgvid" playsinline webkit-playsinline autoplay muted loop controls="false">
 					<source src="<?php echo $video_mp4; ?>" type="video/mp4">
+					<source src="<?php echo $video_webm; ?>" type="video/webm">
+					<img src="<?php echo $banner_img; ?>">
 				</video>
 			</section>
 		<?php 
